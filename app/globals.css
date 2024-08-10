@@ -67,3 +67,24 @@
     @apply bg-background text-foreground;
   }
 }
+
+.custom-header-underline {
+  display: inline;
+  background: linear-gradient(10deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)) 0
+    1.25em/100% 8px repeat-x;
+  border-radius: 6px;
+  padding: 0 6px;
+}
+
+.custom-header-hover-underline {
+  transition: all 0.3s ease-in-out;
+  padding: 0 6px;
+}
+
+.custom-header-hover-underline:hover {
+  /* Add rounding to the borders of the underline */
+  display: inline;
+  background: linear-gradient(10deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)) 0
+    1.25em/100% 8px repeat-x;
+  border-radius: 6px;
+}
