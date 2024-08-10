@@ -32,7 +32,7 @@ const page = () => {
                 <AlertDialogTitle>{event.title}</AlertDialogTitle>
                 <AlertDialogDescription>
                   {event.description}
-                  <div className="text-sm text-[#f37335] font-bold border-t ">
+                  <div className="text-base text-[#f37335] font-bold border-t ">
                     Date: {event.date}
                   </div>
                 </AlertDialogDescription>
