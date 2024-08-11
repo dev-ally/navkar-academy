@@ -1,17 +1,48 @@
+import { Info } from "lucide-react";
 import React from "react";
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogDescription,
+} from "@/components/ui/alert-dialog";
 
-const Card = ({ eventdate, eventimg }) => {
+const Card = ({ eventTitle, eventDescription, eventDate, eventImg }) => {
   return (
-    <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border  border-2  rounded-lg w-full sm:w-80  lg:w-96 hover:scale-95 transition-transform duration-300 ease-in-out cursor-pointer mx-auto">
+    <div className="relative flex flex-col text-gray-700 bg-white shadow-md border-2 rounded-md w-full mx-auto">
       <div>
         <img
-          src={eventimg}
+          src={eventImg}
           alt="Event Image"
-          className="w-full h-48 object-cover rounded-t-lg"
+          className="w-full h-56 object-cover rounded-t-md"
         />
       </div>
-      <div className="p-6 pt-3 border-t border-gray-200 ">
-        <p className="text-gray-700 text-center font-medium">{eventdate} </p>
+      <div className="px-6 py-4 flex justify-between items-center">
+        <p className="text-primary font-semibold">{eventTitle}</p>
+        <AlertDialog>
+          <AlertDialogTrigger>
+            <Info />
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle className="text-center text-primary">
+                <h2 className="text-2xl font-bold leading-7 mb-2">
+                  {eventTitle}
+                </h2>
+                <span>{eventDate}</span>
+              </AlertDialogTitle>
+            </AlertDialogHeader>
+            <div className="w-[100%] h-[3px] rounded-full my-2 bg-accent mx-auto md:mx-0" />
+            <div className="text-base text-primary">
+              <div className="mb-3">
+                <span className="font-bold">About this event: </span>
+                {eventDescription}
+              </div>
+            </div>
+          </AlertDialogContent>
+        </AlertDialog>
       </div>
     </div>
   );

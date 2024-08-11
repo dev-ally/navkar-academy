@@ -2,7 +2,8 @@ export const events = [
   {
     id: 1,
     title: "Event 1",
-    description: "Description for event 1",
+    description:
+      "Description for event 1. This is a demo event with a lot of participants. Please do attend this event as this event is more important for the studentsHere the students are you gays.",
     date: "2022-01-01",
     image: "/eventsimg.jpeg",
   },
