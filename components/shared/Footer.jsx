@@ -101,21 +101,31 @@ const Footer = () => {
               {/* CTA Information */}
               <div>
                 <h3 className="text-[18px] font-semibold">Call:</h3>
-                <p className="text-muted-foreground text-[14px]">
+                <a
+                  href="tel:123-456-7890"
+                  className="text-muted-foreground text-[14px] hover:text-accent"
+                >
                   123-456-7890
-                </p>
+                </a>
               </div>
               <div>
                 <h3 className="text-[18px] font-semibold">Mail:</h3>
-                <p className="text-muted-foreground text-[14px]">
+                <a
+                  href="mailto:info@navkaracademy.in"
+                  className="text-muted-foreground text-[14px] hover:text-accent"
+                >
                   info@navkaracademy.in
-                </p>
+                </a>
               </div>
               <div>
                 <h3 className="text-[18px] font-semibold">Address:</h3>
-                <p className="text-muted-foreground text-[14px]">
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  className="text-muted-foreground text-[14px] hover:text-accent"
+                >
                   Demo Address, Maharashtra
-                </p>
+                </a>
               </div>
             </div>
             <div className="w-full flex gap-4 items-center justify-between md:justify-start mt-6">
@@ -123,14 +133,14 @@ const Footer = () => {
               {socialIcons.map((icon) => (
                 <a
                   href={icon.link}
-                  className="text-white rounded-full border-2 border-black"
+                  className="rounded-full border-2 border-black"
                 >
                   <Image
                     src={icon.icon}
                     alt={`${icon.name} Icon`}
                     width={1000}
                     height={1000}
-                    className="w-12 h-12 p-[12px] text-white hover:w-13 hover:scale-[1.1] transition-all duration-300 ease-in-out"
+                    className="w-12 h-12 p-[12px] hover:w-13 hover:scale-[1.1] transition-all duration-300 ease-in-out"
                   />
                 </a>
               ))}

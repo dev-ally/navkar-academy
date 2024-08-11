@@ -49,12 +49,6 @@ const Header = () => {
                       height={1000}
                       className="h-[100px] object-contain w-fit"
                     />
-                    {/* <div className="w-full flex justify-center items-end flex-col">
-                      <span className="text-lg mb-[-2px]">Navkar Academy</span>
-                      <span className="text-sm text-muted-foreground">
-                        Since 2008
-                      </span>
-                    </div> */}
                   </SheetTitle>
                   <div className="w-full h-[2px] bg-black/10 rounded-full" />
                   {/* NavLinks */}
@@ -96,13 +90,19 @@ const Header = () => {
                   <div className="flex flex-col gap-4">
                     <div>
                       <h3 className="text-[18px] font-semibold">Call:</h3>
-                      <a href="tel:123-456-7890" className="text-[14px]">
+                      <a
+                        href="tel:123-456-7890"
+                        className="text-muted-foreground text-[14px] hover:text-accent"
+                      >
                         123-456-7890
                       </a>
                     </div>
                     <div>
                       <h3 className="text-[18px] font-semibold">Mail:</h3>
-                      <a href="tel:123-456-7890" className="text-[14px]">
+                      <a
+                        href="mailto:info@navkaracademy.in"
+                        className="text-muted-foreground text-[14px] hover:text-accent"
+                      >
                         info@navkaracademy.in
                       </a>
                     </div>
@@ -111,7 +111,7 @@ const Header = () => {
                       <a
                         href="https://youtube.com"
                         target="_blank"
-                        className="text-[14px]"
+                        className="text-muted-foreground text-[14px] hover:text-accent"
                       >
                         Demo Address, Maharashtra
                       </a>
@@ -125,21 +125,33 @@ const Header = () => {
           <div className="hidden md:items-center h-full md:flex md:gap-10">
             <div>
               <h3 className="text-[18px] font-semibold">Call:</h3>
-              <p className="text-muted-foreground text-[14px]">123-456-7890</p>
+              <a
+                href="tel:123-456-7890"
+                className="text-muted-foreground text-[14px] hover:text-accent"
+              >
+                123-456-7890
+              </a>
             </div>
             <div className="w-[2px] h-[40px] bg-black/10 rounded-full" />
             <div>
               <h3 className="text-[18px] font-semibold">Mail:</h3>
-              <p className="text-muted-foreground text-[14px]">
+              <a
+                href="mailto:info@navkaracademy.in"
+                className="text-muted-foreground text-[14px] hover:text-accent"
+              >
                 info@navkaracademy.in
-              </p>
+              </a>
             </div>
             <div className="w-[2px] h-[40px] bg-black/10 rounded-full" />
             <div>
               <h3 className="text-[18px] font-semibold">Address:</h3>
-              <p className="text-muted-foreground text-[14px]">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                className="text-muted-foreground text-[14px] hover:text-accent"
+              >
                 Demo Address, Maharashtra
-              </p>
+              </a>
             </div>
           </div>
         </div>
@@ -183,7 +195,7 @@ const Header = () => {
             </div>
             <div className="">
               <div>
-                <Button>Contact Us</Button>
+                <Button variant="native">Contact Us</Button>
               </div>
             </div>
           </div>
