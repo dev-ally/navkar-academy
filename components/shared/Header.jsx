@@ -21,16 +21,16 @@ const Header = () => {
 
   return (
     <Container>
-      <div className="pt-6">
+      <div className="pt-4">
         <div className="flex justify-between items-center gap-6 md:gap-16 px-6">
           {/* Logo */}
           <div>
             <Image
-              src="/demo-logo.svg"
+              src="/logo.png"
               alt="Demo Logo"
               width={1000}
               height={1000}
-              className="w-full h-[40px]"
+              className="w-full h-[100px]"
             />
           </div>
           {/* Mobile Nav */}
