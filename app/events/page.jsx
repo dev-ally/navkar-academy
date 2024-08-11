@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { X } from "lucide-react";
 
-const page = () => {
+const Events = () => {
   return (
     <div className="mt-5 flex justify-center flex-col ">
       <div>
@@ -45,4 +45,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Events;

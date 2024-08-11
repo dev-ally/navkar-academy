@@ -3,10 +3,11 @@
 import Image from "next/image";
 import React from "react";
 import Container from "./Container";
-import { Menu } from "lucide-react";
+import { Menu, Store } from "lucide-react";
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -21,16 +22,16 @@ const Header = () => {
 
   return (
     <Container>
-      <div className="pt-6">
+      <div className="pt-4">
         <div className="flex justify-between items-center gap-6 md:gap-16 px-6">
           {/* Logo */}
           <div>
             <Image
-              src="/demo-logo.svg"
+              src="/logo.png"
               alt="Demo Logo"
               width={1000}
               height={1000}
-              className="w-full h-[40px]"
+              className="w-full h-[100px]"
             />
           </div>
           {/* Mobile Nav */}
@@ -39,10 +40,88 @@ const Header = () => {
               <SheetTrigger>
                 <Menu />
               </SheetTrigger>
-              <SheetContent>
-                <SheetHeader>
-                  <SheetTitle>Are you absolutely sure?</SheetTitle>
+              <SheetContent className="flex flex-col justify-between items-center h-full">
+                <SheetHeader className="my-6 w-full">
+                  <SheetTitle className="flex justify-between items-center w-full mb-6">
+                    <Image
+                      src="/logo.png"
+                      alt="Navkar Academy Logo"
+                      width={1000}
+                      height={1000}
+                      className="h-[80px] object-contain w-fit"
+                    />
+                    <div className="w-full flex justify-center items-end flex-col">
+                      <span className="text-lg mb-[-2px]">Navkar Academy</span>
+                      <span className="text-sm text-muted-foreground">
+                        Since 2008
+                      </span>
+                    </div>
+                  </SheetTitle>
+                  <div className="w-full h-[2px] bg-black/10 rounded-full" />
+                  {/* NavLinks */}
+                  <div className="flex justify-center items-center flex-col w-full gap-x-4 gap-y-2 pt-6">
+                    <div
+                      className={`text-black text-lg tracking-wide ${
+                        pathname === "/" && "font-semibold"
+                      }`}
+                    >
+                      <Link href="/">Home</Link>
+                    </div>
+                    <div
+                      className={`text-black text-lg tracking-wide ${
+                        pathname === "/toppers" && "font-semibold"
+                      }`}
+                    >
+                      <Link href="/toppers">Toppers</Link>
+                    </div>
+                    <div
+                      className={`text-black text-lg tracking-wide ${
+                        pathname === "/events" && "font-semibold"
+                      }`}
+                    >
+                      <Link href="/events">Events</Link>
+                    </div>
+                    {/* <div className="text-black text-lg tracking-wide">
+                      <a
+                        href="https://store.navkaracademy.in"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Store
+                      </a>
+                    </div> */}
+                  </div>
                 </SheetHeader>
+
+                <div className="w-full">
+                  <div className="flex justify-center items-center mb-4">
+                    <Button asChild className="w-full">
+                      <a href="" className="flex gap-2">
+                        <Store /> Store
+                      </a>
+                    </Button>
+                  </div>
+                  <div className="w-full h-[2px] bg-black/10 rounded-full my-6" />
+                  {/* CTA Information */}
+                  <div className="flex flex-col gap-4">
+                    <div>
+                      <h3 className="text-[18px] font-semibold">Call:</h3>
+                      <a href="tel:123-456-7890" className="text-[14px]">
+                        123-456-7890
+                      </a>
+                    </div>
+                    <div>
+                      <h3 className="text-[18px] font-semibold">Address:</h3>
+                      <a
+                        href="https://youtube.com"
+                        target="_blank"
+                        className="text-[14px]"
+                      >
+                        Demo Address, Maharashtra
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </SheetContent>
             </Sheet>
           </div>
