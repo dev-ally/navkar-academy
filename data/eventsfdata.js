@@ -35,11 +35,13 @@ export const events = [
     date: "2022-01-05",
     image: "/eventsimg.jpeg",
   },
+
   {
     id: 6,
-    title: "Event 6",
-    description: "Description for event 6",
-    date: "2022-01-06   ",
+    title: "Seminar in OncoPathology",
+    description:
+      "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur minus et iusto, sapiente vel molestias delectus praesentium excepturi cum modi fshubbfhd hdffbdshfbdyhf sfhdsbfybfhsb sdfdsfhdsgfhsdgbhh sfhbsdhgbshgbsdhsb sfshbshgsbghsdbshb sbfsb ?",
+    date: "2025-01-07",
     image: "/eventsimg.jpeg",
   },
 ];
