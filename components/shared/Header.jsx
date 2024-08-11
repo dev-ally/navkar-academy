@@ -7,7 +7,6 @@ import { Menu, Store } from "lucide-react";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -42,20 +41,20 @@ const Header = () => {
               </SheetTrigger>
               <SheetContent className="flex flex-col justify-between items-center h-full">
                 <SheetHeader className="my-6 w-full">
-                  <SheetTitle className="flex justify-between items-center w-full mb-6">
+                  <SheetTitle className="flex justify-center items-center w-full mb-6">
                     <Image
                       src="/logo.png"
                       alt="Navkar Academy Logo"
                       width={1000}
                       height={1000}
-                      className="h-[80px] object-contain w-fit"
+                      className="h-[100px] object-contain w-fit"
                     />
-                    <div className="w-full flex justify-center items-end flex-col">
+                    {/* <div className="w-full flex justify-center items-end flex-col">
                       <span className="text-lg mb-[-2px]">Navkar Academy</span>
                       <span className="text-sm text-muted-foreground">
                         Since 2008
                       </span>
-                    </div>
+                    </div> */}
                   </SheetTitle>
                   <div className="w-full h-[2px] bg-black/10 rounded-full" />
                   {/* NavLinks */}
@@ -81,15 +80,6 @@ const Header = () => {
                     >
                       <Link href="/events">Events</Link>
                     </div>
-                    {/* <div className="text-black text-lg tracking-wide">
-                      <a
-                        href="https://store.navkaracademy.in"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Store
-                      </a>
-                    </div> */}
                   </div>
                 </SheetHeader>
 
@@ -108,6 +98,12 @@ const Header = () => {
                       <h3 className="text-[18px] font-semibold">Call:</h3>
                       <a href="tel:123-456-7890" className="text-[14px]">
                         123-456-7890
+                      </a>
+                    </div>
+                    <div>
+                      <h3 className="text-[18px] font-semibold">Mail:</h3>
+                      <a href="tel:123-456-7890" className="text-[14px]">
+                        info@navkaracademy.in
                       </a>
                     </div>
                     <div>
@@ -130,6 +126,13 @@ const Header = () => {
             <div>
               <h3 className="text-[18px] font-semibold">Call:</h3>
               <p className="text-muted-foreground text-[14px]">123-456-7890</p>
+            </div>
+            <div className="w-[2px] h-[40px] bg-black/10 rounded-full" />
+            <div>
+              <h3 className="text-[18px] font-semibold">Mail:</h3>
+              <p className="text-muted-foreground text-[14px]">
+                info@navkaracademy.in
+              </p>
             </div>
             <div className="w-[2px] h-[40px] bg-black/10 rounded-full" />
             <div>
