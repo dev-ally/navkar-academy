@@ -11,7 +11,7 @@ import {
 
 const Card = ({ eventTitle, eventDescription, eventDate, eventImg }) => {
   return (
-    <div className="relative flex flex-col text-gray-700 bg-white shadow-md border-2 rounded-md w-full mx-auto">
+    <div className="relative flex flex-col text-gray-700 bg-white shadow-md border-2 rounded-md w-full mx-auto hover:scale-100 transition-all duration-300">
       <div>
         <img
           src={eventImg}
