@@ -1,14 +1,17 @@
-import About from "@/components/private/About";
-import Contact from "@/components/private/Contact";
-import Events from "@/components/private/Events";
-import Header from "@/components/private/Header";
-import Teachers from "@/components/private/Teachers";
-import Testimonials from "@/components/private/Testimonials";
+import {
+  Header,
+  About,
+  Events,
+  Teachers,
+  Testimonials,
+  Contact,
+} from "@/components/private";
 
 export default function Home() {
   return (
     <div>
       <Header />
+      <div className="w-full h-[2px] bg-black/10 rounded-full" />
       <About />
       <Events />
       <Teachers />
