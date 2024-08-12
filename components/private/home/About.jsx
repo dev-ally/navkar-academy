@@ -2,7 +2,6 @@
 
 import { aboutCardsData } from "@/data/aboutCardsData";
 import Container from "../../shared/Container";
-import Image from "next/image";
 
 const About = () => {
   return (
