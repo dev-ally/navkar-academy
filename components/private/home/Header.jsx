@@ -1,14 +1,14 @@
 import React from "react";
-import Container from "../shared/Container";
+import Container from "../../shared/Container";
 import Image from "next/image";
 import { banner, elements } from "@/assets";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import { Shapes } from "lucide-react";
 
 const Header = () => {
   return (
     <Container>
-      <div className="flex w-full justify-between items-center px-6 gap-6 min-h-[70svh] md:min-h-[80svh]">
+      <div className="flex w-full justify-between items-center px-6 py-12 gap-6 min-h-[70svh] md:min-h-[80svh]">
         <div className="w-full md:w-[50%]">
           <h4 className="mb-3 md:mb-4 text-xl md:text-2xl font-bold">
             ## <span className="text-accent">NAVKAR</span> ACADEMY

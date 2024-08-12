@@ -6,7 +6,6 @@ import {
   AlertDialogContent,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogDescription,
 } from "@/components/ui/alert-dialog";
 
 const Card = ({ eventTitle, eventDescription, eventDate, eventImg }) => {
