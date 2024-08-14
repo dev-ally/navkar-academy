@@ -23,7 +23,7 @@ const top3Toppers = sortedToppers.slice(0, 3).map((topper, index) => ({
 
 const remainingToppers = sortedToppers.slice(3);
 
-const toppersChunks = chunkArray(remainingToppers, toppers.length / 2);
+const toppersChunks = chunkArray(remainingToppers, remainingToppers.length / 2);
 
 const Toppers = () => {
   return (
