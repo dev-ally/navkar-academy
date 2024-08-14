@@ -11,6 +11,9 @@ import quality from "@/assets/about/quality.png";
 import results from "@/assets/about/results.png";
 import teacher from "@/assets/about/teacher.png";
 
+import events from "@/assets/events/events.png";
+import eventsimg from "@/assets/events/eventsimg.jpeg";
+
 export {
   facebook,
   instagram,
@@ -22,4 +25,6 @@ export {
   quality,
   results,
   teacher,
+  events,
+  eventsimg,
 };
