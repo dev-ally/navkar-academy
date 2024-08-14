@@ -8,7 +8,6 @@ const Events = () => {
   return (
     <Container>
       <div className="my-10 flex flex-col items-center px-6">
-        {/* Added padding for mobile spacing */}
         <div>
           <h1 className="font-bold py-2 text-center text-3xl md:text-4xl flex items-center gap-2 mb-6 md:mb-8">
             <Calendar className="w-8 h-8" />

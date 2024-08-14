@@ -9,7 +9,11 @@ const TopperCard = ({ topper }) => {
       <div class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl">
         <div className="bg-gray-300 w-full text-center text-2xl flex justify-center items-center font-bold border-2    rounded-xl">
           {" "}
-          Topper Image
+          <img
+            src="/demo.jpg"
+            alt="topper"
+            className="w-full h-full object-cover"
+          />
         </div>
         <span class="absolute top-0 left-0 m-2 w-10 h-9 rounded-full bg-accent p-2 text-center text-sm font-medium text-white">
           {topper.rank}
@@ -20,7 +24,7 @@ const TopperCard = ({ topper }) => {
           {topper.name}
         </h5>
 
-        <div class="mt-2 mb-5 flex flex-col  ">
+        <div class="mt-2  flex flex-col  ">
           <p>
             <span class="text-xl font-bold text-[#155799] ">
               Percentage:
