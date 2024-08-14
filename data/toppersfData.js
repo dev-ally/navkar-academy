@@ -47,4 +47,20 @@ export const toppers = [
     school: "School 5",
     image: "/toppersimg.jpeg",
   },
+  {
+    id: 7,
+    name: "Elyse Doe",
+    marks: 78,
+    rank: 5,
+    school: "School 5",
+    image: "/toppersimg.jpeg",
+  },
+  {
+    id: 8,
+    name: "dfdg",
+    marks: 78,
+    rank: 5,
+    school: "School 5",
+    image: "/toppersimg.jpeg",
+  },
 ];
