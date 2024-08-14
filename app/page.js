@@ -17,6 +17,7 @@ export default function Home() {
       <Events />
       <div className="w-full h-[2px] bg-black/10 rounded-full" />
       <Teachers />
+      <div className="w-full h-[2px] bg-black/10 rounded-full" />
       <Testimonials />
       <Contact />
     </div>
