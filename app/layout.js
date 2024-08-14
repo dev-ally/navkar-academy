@@ -14,11 +14,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        <div className="w-full h-[3px] bg-black/10 rounded-full my-4 hidden md:block" />
-        {children}
-        <div className="w-full h-[3px] bg-black/10 rounded-full my-4" />
-        <Footer />
+        <div className="overflow-hidden">
+          <Header />
+          <div className="w-full h-[3px] bg-black/10 rounded-full my-4 hidden md:block o" />
+          {children}
+          <div className="w-full h-[3px] bg-black/10 rounded-full my-4" />
+          <Footer />
+        </div>
       </body>
     </html>
   );

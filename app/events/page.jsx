@@ -7,8 +7,8 @@ import Container from "@/components/shared/Container";
 const Events = () => {
   return (
     <Container>
-      <div className="my-8 flex flex-col items-center px-6">
-        {/* TODO: Check if this is okay, and finalize it. */}
+      <div className="my-10 flex flex-col items-center px-6">
+        {/* Added padding for mobile spacing */}
         <div>
           <h1 className="font-bold py-2 text-center text-3xl md:text-4xl flex items-center gap-2 mb-6 md:mb-8">
             <Calendar className="w-8 h-8" />
@@ -26,9 +26,8 @@ const Events = () => {
             />
           ))}
         </div>
-        {/* TODO: Complete the past events section. */}
         <div>
-          <h1 className="font-bold text-center text-3xl mt-8 py-2 flex items-center gap-2 justify-center">
+          <h1 className="font-bold text-center text-3xl md:text-4xl  md:mb-8 mb-6 mt-12 py-2 flex items-center gap-2 justify-center">
             <ClipboardCheck className="w-8 h-8 text-black" />
             <span className="text-accent"> Past</span> Events
           </h1>
