@@ -18,7 +18,7 @@ const sortedToppers = toppers.sort((a, b) => b.marks - a.marks);
 
 const top3Toppers = sortedToppers.slice(0, 3).map((topper, index) => ({
   ...topper,
-  rank: index === 0 ? "1st" : index === 1 ? "2nd" : "3rd  ",
+  rank: index === 0 ? "1st" : index === 1 ? "2nd" : "3rd",
 }));
 
 const remainingToppers = sortedToppers.slice(3);
@@ -28,10 +28,17 @@ const toppersChunks = chunkArray(
 );
 
 const Toppers = () => {
-  const [showMore, setShowMore] = useState(false);
+  // Use an object to manage the state for each section by year
+  const [expandedSections, setExpandedSections] = useState({
+    2023: false,
+    2022: false,
+  });
 
-  const handleShowMore = () => {
-    setShowMore(!showMore);
+  const handleShowMore = (year) => {
+    setExpandedSections((prevState) => ({
+      ...prevState,
+      [year]: !prevState[year],
+    }));
   };
 
   return (
@@ -43,7 +50,7 @@ const Toppers = () => {
         </h2>
 
         {/* Display the top 3 toppers in cards with ranks */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {top3Toppers.map((topper, index) => (
             <TopperCard key={index} topper={topper} />
           ))}
@@ -57,42 +64,46 @@ const Toppers = () => {
           ))}
         </div>
 
-        <div className="flex flex-col items-center mt-10 py-10">
-          <h2 className="text-4xl font-bold flex items-center gap-2">
-            <GraduationCap className="w-10 h-10" /> 2023{" "}
-            <span className="text-accent">Toppers</span>
-          </h2>
+        {["2023", "2022"].map((year) => (
+          <div key={year} className="flex flex-col items-center mt-10 py-10">
+            <h2 className="text-4xl font-bold flex items-center gap-2">
+              <GraduationCap className="w-10 h-10" /> {year}{" "}
+              <span className="text-accent">Toppers</span>
+            </h2>
 
-          {/* Display the top 3 toppers in cards with ranks */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
-            {top3Toppers.map((topper, index) => (
-              <TopperCard key={index} topper={topper} />
-            ))}
-          </div>
-
-          <div className="flex justify-center items-center w-full mt-5">
-            <button
-              onClick={handleShowMore}
-              className="flex items-center px-10 py-2  bg-black text-white rounded-sm hover:bg-accent"
-            >
-              {showMore ? "Show Less" : "Show More"}{" "}
-              <ChevronDown
-                className={`w-6 h-6 ${showMore ? "transform rotate-180" : ""}`}
-              />
-            </button>
-          </div>
-
-          {/* Conditionally render more toppers */}
-          {showMore && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 ">
-              {toppersChunks.map((chunk, index) => (
-                <div key={index} className="w-full">
-                  <ToppersTable toppers={chunk} />
-                </div>
+            {/* Display the top 3 toppers in cards with ranks */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {top3Toppers.map((topper, index) => (
+                <TopperCard key={index} topper={topper} />
               ))}
             </div>
-          )}
-        </div>
+
+            <div className="flex justify-center items-center w-full mt-5">
+              <button
+                onClick={() => handleShowMore(year)}
+                className="flex items-center px-10 py-2 bg-black text-white rounded-sm hover:bg-accent"
+              >
+                {expandedSections[year] ? "Show Less" : "Show More"}{" "}
+                <ChevronDown
+                  className={`w-6 h-6 ${
+                    expandedSections[year] ? "transform rotate-180" : ""
+                  }`}
+                />
+              </button>
+            </div>
+
+            {/* Conditionally render more toppers */}
+            {expandedSections[year] && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 animate-fadeIn">
+                {toppersChunks.map((chunk, index) => (
+                  <div key={index} className="w-full">
+                    <ToppersTable toppers={chunk} />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </Container>
   );
