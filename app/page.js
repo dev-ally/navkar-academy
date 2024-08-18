@@ -19,6 +19,7 @@ export default function Home() {
       <Teachers />
       <div className="w-full h-[2px] bg-black/10 rounded-full" />
       <Testimonials />
+      <div className="w-full h-[2px] bg-black/10 rounded-full" />
       <Contact />
     </div>
   );
