@@ -51,7 +51,6 @@ const Events = () => {
             />
           </div>
           <div className="w-full md:w-[60%]">
-            {/* Latest 2 Events */}
             {eventsData.slice(0, 2).map((event) => (
               <div
                 key={event.id}
