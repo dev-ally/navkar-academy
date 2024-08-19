@@ -13,6 +13,7 @@ import teacher from "@/assets/about/teacher.png";
 
 import events from "@/assets/events/events.png";
 import eventsimg from "@/assets/events/eventsimg.jpeg";
+import demoEvent from "@/assets/events/demoEvent.png";
 
 import teacherprof from "@/assets/teachers/teacher.png";
 
@@ -30,4 +31,5 @@ export {
   events,
   eventsimg,
   teacherprof,
+  demoEvent,
 };

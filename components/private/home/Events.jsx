@@ -4,29 +4,30 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { events as eventsData } from "@/data/eventsfdata";
 
-const eventsData = [
-  {
-    id: 1,
-    title: "Event Title",
-    description:
-      "lorem Ea aliquip pariatur ad nisi magna Lorem anim. lorem Ea aliquip pariatur ad nisi magna Lorem anim...",
-    date: "1 November, 2024",
-  },
-  {
-    id: 2,
-    title: "Event Title",
-    description:
-      "lorem Ea aliquip pariatur ad nisi magna Lorem anim. lorem Ea aliquip pariatur ad nisi magna Lorem anim...",
-    date: "28 August, 2024",
-  },
-  // {
-  //   id: 3,
-  //   title: "Event Title",
-  //   description: "Event Description (Short Description)",
-  //   date: "Event Date",
-  // },
-];
+// const eventsData = [
+//   {
+//     id: 1,
+//     title: "Event Title",
+//     description:
+//       "lorem Ea aliquip pariatur ad nisi magna Lorem anim. lorem Ea aliquip pariatur ad nisi magna Lorem anim...",
+//     date: "1 November, 2024",
+//   },
+//   {
+//     id: 2,
+//     title: "Event Title",
+//     description:
+//       "lorem Ea aliquip pariatur ad nisi magna Lorem anim. lorem Ea aliquip pariatur ad nisi magna Lorem anim...",
+//     date: "28 August, 2024",
+//   },
+//   {
+//     id: 3,
+//     title: "Event Title",
+//     description: "Event Description (Short Description)",
+//     date: "Event Date",
+//   },
+// ];
 
 const Events = () => {
   return (
@@ -50,15 +51,15 @@ const Events = () => {
             />
           </div>
           <div className="w-full md:w-[60%]">
-            {/* Latest 3 Events */}
-            {eventsData.map((event) => (
+            {/* Latest 2 Events */}
+            {eventsData.slice(0, 2).map((event) => (
               <div
                 key={event.id}
                 className="flex flex-col md:flex-row gap-4 mb-6 border-2 border-accent p-4 rounded-lg"
               >
                 <div className="bg-accent rounded-lg w-full md:w-[300px]">
                   <Image
-                    src={eventsimg}
+                    src={event.image}
                     alt="Event Image"
                     width={1000}
                     height={1000}
