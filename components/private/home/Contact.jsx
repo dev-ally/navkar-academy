@@ -1,6 +1,5 @@
 import Container from "@/components/shared/Container";
 import { Mail, MapPin, PhoneCall, Send } from "lucide-react";
-import React from "react";
 
 const Contact = () => {
   return (
