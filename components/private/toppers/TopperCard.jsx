@@ -3,7 +3,7 @@ import React from "react";
 const TopperCard = ({ topper }) => {
   return (
     <div
-      class="relative m-10 flex w-[320px] max-w-xs flex-col overflow-hidden rounded-lg border border-gray-300 bg-white shadow-md "
+      class="relative md:m-10  mt-8 flex w-full md:w-[320px] max-w-xs flex-col overflow-hidden rounded-lg border border-gray-300 bg-white shadow-md "
       key={topper.id}
     >
       <div class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl">

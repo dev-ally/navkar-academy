@@ -197,7 +197,9 @@ const Header = () => {
             </div>
             <div className="">
               <div>
-                <Button variant="native">Contact Us</Button>
+                <Link href="/contact-us">
+                  <Button variant="native">Contact Us</Button>
+                </Link>
               </div>
             </div>
           </div>
