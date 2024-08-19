@@ -1,19 +1,26 @@
 import { Info } from "lucide-react";
-import React from "react";
 import {
   AlertDialog,
   AlertDialogTrigger,
   AlertDialogContent,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogDescription,
 } from "@/components/ui/alert-dialog";
+import Image from "next/image";
 
-const Card = ({ eventTitle, eventDescription, eventDate, eventImg }) => {
+const Card = ({
+  eventTitle,
+  eventDescription,
+  eventDate,
+  eventImg,
+  eventLocation,
+}) => {
   return (
-    <div className="relative flex flex-col text-gray-700 bg-white shadow-md border-2 rounded-md w-full mx-auto hover:scale-100 transition-all duration-300">
+    <div className="relative flex flex-col text-gray-700 bg-white shadow-md border-2 rounded-md w-full mx-auto hover:scale-100 transition-all duration-300 min-w-[200px] max-w-[400px]">
       <div>
-        <img
+        <Image
+          width={1000}
+          height={1000}
           src={eventImg}
           alt="Event Image"
           className="w-full h-56 object-cover rounded-t-md"
@@ -39,6 +46,9 @@ const Card = ({ eventTitle, eventDescription, eventDate, eventImg }) => {
               <div className="mb-3">
                 <span className="font-bold">About this event: </span>
                 {eventDescription}
+              </div>
+              <div className="mb-3">
+                <span className="font-bold">Location</span> - {eventLocation}
               </div>
             </div>
           </AlertDialogContent>

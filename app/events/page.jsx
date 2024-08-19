@@ -14,7 +14,7 @@ const Events = () => {
             Upcoming <span className="text-accent">Events</span>
           </h1>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-10 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 justify-center">
           {events.map((event, index) => (
             <Card
               key={index}
@@ -22,6 +22,7 @@ const Events = () => {
               eventDescription={event.description}
               eventDate={event.date}
               eventImg={event.image}
+              eventLocation={event.location}
             />
           ))}
         </div>
@@ -31,7 +32,7 @@ const Events = () => {
             <span className="text-accent"> Past</span> Events
           </h1>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-10 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 justify-center">
           {events.map((event, index) => (
             <Card
               key={index}
