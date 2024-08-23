@@ -11,7 +11,7 @@ const Header = () => {
       <div className="flex w-full justify-between items-center px-6 py-12 gap-6 min-h-[70svh] md:min-h-[80svh]">
         <div className="w-full md:w-[50%]">
           <h4 className="mb-3 md:mb-4 text-xl md:text-2xl font-bold">
-            ## <span className="text-accent">NAVKAR</span> ACADEMY
+            # <span className="text-accent">NAVKAR</span> ACADEMY
           </h4>
           <h1 className="text-4xl md:text-7xl font-bold mb-2 md:mb-3">
             The Best <span className="text-accent">Choice</span>
