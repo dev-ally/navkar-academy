@@ -4,6 +4,7 @@ import Image from "next/image";
 import { banner, elements } from "@/assets";
 import { Button } from "../../ui/button";
 import { Shapes } from "lucide-react";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -24,8 +25,10 @@ const Header = () => {
             malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.
             Ut ac ligula sapien. Suspendisse cursus faucibus finibus.
           </p>
-          <Button variant="header">
-            <Shapes /> Learn More
+          <Button variant="header" asChild className="w-fit">
+            <a href="https://navkar-academy-store.vercel.app" target="_blank">
+              <Shapes /> Go To Store
+            </a>
           </Button>
         </div>
         <div className="hidden md:flex justify-center items-center w-[40%]">
