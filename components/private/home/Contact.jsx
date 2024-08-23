@@ -11,22 +11,21 @@ const Contact = () => {
             Have any questions? Feel free to contact us.
           </p>
         </div>
-        <div className="flex items-center border-2 border-accent rounded-md w-full md:w-[90%]">
-          <div className="hidden lg:flex flex-col gap-8 bg-accent text-white px-6 py-10 w-[50%]">
-            <div>
-              {/* Map */}
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.008834880848!2d73.08942017589804!3d19.019332353747796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e9c1fa130487%3A0xac3d8490bf4a2bc9!2sNavkar%20Academy!5e0!3m2!1sen!2sin!4v1724013140042!5m2!1sen!2sin"
-                style={{ border: "0" }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-[300px] rounded-md"
-              ></iframe>
-            </div>
-            {/* Contact Information for Desktop */}
-            <div className="flex flex-col gap-4">
-              {/* Contact Information */}
+        <div className="flex justify-center items-center border-2 border-accent rounded-md w-full md:w-[90%] h-full">
+          {/* <div className="hidden lg:flex flex-col gap-8 bg-accent text-white px-6 py-10 w-[50%] h-full"> */}
+          <div className="hidden lg:block bg-accent px-6 py-10 w-[50%] h-[100%]">
+            {/* Map */}
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.008834880848!2d73.08942017589804!3d19.019332353747796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e9c1fa130487%3A0xac3d8490bf4a2bc9!2sNavkar%20Academy!5e0!3m2!1sen!2sin!4v1724013140042!5m2!1sen!2sin"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full min-h-[400px] rounded-md border-0"
+            ></iframe>
+          </div>
+          {/* Contact Information for Desktop */}
+          {/* <div className="flex flex-col gap-4">
+              Contact Information
               <div className="flex items-center gap-2 text-lg">
                 <PhoneCall />
                 <span>+91 1234567890</span>
@@ -41,8 +40,8 @@ const Contact = () => {
                   123, Lorem Ipsum Street, Lorem Ipsum, Dolor Sit, Amet
                 </span>
               </div>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
           <div className="px-6 py-10 w-full lg:w-[50%]">
             {/* Contact Form for both Mobile & Desktop */}
             <form className="flex flex-col gap-6">
