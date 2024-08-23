@@ -28,7 +28,6 @@ const toppersChunks = chunkArray(
 );
 
 const Toppers = () => {
-  // Use an object to manage the state for each section by year
   const [expandedSections, setExpandedSections] = useState({
     2023: false,
     2022: false,
@@ -50,13 +49,13 @@ const Toppers = () => {
         </h2>
 
         {/* Display the top 3 toppers in cards with ranks */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-center">
           {top3Toppers.map((topper, index) => (
             <TopperCard key={index} topper={topper} />
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 justify-center">
           {toppersChunks.map((chunk, index) => (
             <div key={index} className="w-full">
               <ToppersTable toppers={chunk} />
@@ -72,7 +71,7 @@ const Toppers = () => {
             </h2>
 
             {/* Display the top 3 toppers in cards with ranks */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-center">
               {top3Toppers.map((topper, index) => (
                 <TopperCard key={index} topper={topper} />
               ))}
@@ -94,7 +93,7 @@ const Toppers = () => {
 
             {/* Conditionally render more toppers */}
             {expandedSections[year] && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 animate-fadeIn">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 animate-fadeIn justify-center">
                 {toppersChunks.map((chunk, index) => (
                   <div key={index} className="w-full">
                     <ToppersTable toppers={chunk} />
