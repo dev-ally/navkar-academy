@@ -49,10 +49,11 @@ const Testimonials = () => {
                       />
                     </div>
                     <div className="md:w-[70%] flex justify-center items-start flex-col">
-                      <p className="text-base md:text-[18px] barlow-regular mb-4">
+                      <p className="text-lg barlow-regular">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Quisquam, voluptate.
                       </p>
+                      <div className="w-full h-[1px] bg-black/20 my-4" />
                       <span className="text-base md:text-lg barlow-semibold">
                         Student Name
                       </span>

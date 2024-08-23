@@ -69,7 +69,11 @@ const Events = () => {
                   <h3 className="text-xl font- font-bold mb-2">
                     {event.title}
                   </h3>
-                  <p className="text-base mb-2">{event.description}</p>
+                  <p className="text-base mb-2">
+                    {event.description.length <= 140
+                      ? event.description
+                      : `${event.description.substring(0, 140)}...`}
+                  </p>
                   <span className="text-base font-medium">{event.date}</span>
                 </div>
               </div>

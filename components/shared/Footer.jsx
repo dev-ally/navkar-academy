@@ -85,7 +85,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex justify-center items-center w-full flex-col md:flex-row gap-10">
-          <div className="w-full md:w-[70%]">
+          <div className="w-full md:w-[60%]">
             {/* Google Map */}
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120626.92181555415!2d72.88484074403483!3d19.125577103735914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e9c1fa130487%3A0xac3d8490bf4a2bc9!2sNavkar%20Academy!5e0!3m2!1sen!2sin!4v1723370707594!5m2!1sen!2sin"
@@ -96,8 +96,8 @@ const Footer = () => {
               className="w-full h-[300px] rounded-lg"
             ></iframe>
           </div>
-          <div className="w-full md:w-[30%]">
-            <div className="flex flex-wrap gap-4 md:flex-col items-start justify-between md:justify-start">
+          <div className="w-full md:w-[40%]">
+            <div className="flex flex-wrap gap-4 md:gap-x-20 md:gap-y-6 items-start justify-between md:justify-start">
               {/* CTA Information */}
               <div>
                 <h3 className="text-[18px] font-semibold">Call:</h3>

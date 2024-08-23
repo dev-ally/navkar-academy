@@ -190,14 +190,17 @@ const Header = () => {
                 <Link href="/events">Events</Link>
               </div>
               <div className="custom-header-hover-underline">
-                <a href="https://store.navkaracademy.in" target="_blank">
+                <a
+                  href="https://navkar-academy-store.vercel.app/"
+                  target="_blank"
+                >
                   Store
                 </a>
               </div>
             </div>
             <div className="">
               <div>
-                <Link href="/contact-us">
+                <Link href="/contact">
                   <Button variant="native">Contact Us</Button>
                 </Link>
               </div>
