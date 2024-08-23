@@ -25,7 +25,7 @@ const Header = () => {
             malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.
             Ut ac ligula sapien. Suspendisse cursus faucibus finibus.
           </p>
-          <Button variant="header" asChild>
+          <Button variant="header" asChild className="w-fit">
             <a href="https://navkar-academy-store.vercel.app" target="_blank">
               <Shapes /> Go To Store
             </a>
