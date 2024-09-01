@@ -2,14 +2,7 @@
 
 import Card from "@/components/shared/Card";
 import { db } from "@/firebase/config";
-import {
-  onValue,
-  orderByChild,
-  orderByKey,
-  query,
-  ref,
-  set,
-} from "firebase/database";
+import { onValue, orderByKey, query, ref } from "firebase/database";
 import { LoaderCircle } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
