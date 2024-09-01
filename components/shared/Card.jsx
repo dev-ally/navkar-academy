@@ -12,6 +12,7 @@ const Card = ({
   eventTitle,
   eventDescription,
   eventDate,
+  eventTime,
   eventImg,
   eventLocation,
 }) => {
@@ -38,7 +39,10 @@ const Card = ({
                 <h2 className="text-2xl font-bold leading-7 mb-2">
                   {eventTitle}
                 </h2>
-                <span>{eventDate}</span>
+                <div className="flex flex-col">
+                  <span className="font-medium">Date - {eventDate}</span>
+                  <span className="font-medium">Time - {eventTime}</span>
+                </div>
               </AlertDialogTitle>
             </AlertDialogHeader>
             <div className="w-[100%] h-[3px] rounded-full my-2 bg-accent mx-auto md:mx-0" />
