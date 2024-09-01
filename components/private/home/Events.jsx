@@ -24,7 +24,7 @@ const Events = () => {
         const eventsArray = Object.keys(data).map((key) => ({
           id: key,
           ...data[key],
-        }));
+        })).reverse();
         console.log("EVENTS ARRAY", eventsArray);
         setEventData(eventsArray);
       } else {

@@ -48,11 +48,11 @@ const Card = ({
             <div className="w-[100%] h-[3px] rounded-full my-2 bg-accent mx-auto md:mx-0" />
             <div className="text-base text-primary">
               <div className="mb-3">
-                <span className="font-bold">About this event: </span>
-                {eventDescription}
+                <span className="font-bold">Location</span> - {eventLocation}
               </div>
               <div className="mb-3">
-                <span className="font-bold">Location</span> - {eventLocation}
+                <span className="font-bold">About this event: </span>
+                {eventDescription}
               </div>
             </div>
           </AlertDialogContent>
