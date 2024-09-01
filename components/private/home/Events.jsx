@@ -1,35 +1,41 @@
-import { events, eventsimg } from "@/assets";
+"use client";
+
+import { events } from "@/assets";
 import Container from "@/components/shared/Container";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { events as eventsData } from "@/data/eventsfdata";
-
-// const eventsData = [
-//   {
-//     id: 1,
-//     title: "Event Title",
-//     description:
-//       "lorem Ea aliquip pariatur ad nisi magna Lorem anim. lorem Ea aliquip pariatur ad nisi magna Lorem anim...",
-//     date: "1 November, 2024",
-//   },
-//   {
-//     id: 2,
-//     title: "Event Title",
-//     description:
-//       "lorem Ea aliquip pariatur ad nisi magna Lorem anim. lorem Ea aliquip pariatur ad nisi magna Lorem anim...",
-//     date: "28 August, 2024",
-//   },
-//   {
-//     id: 3,
-//     title: "Event Title",
-//     description: "Event Description (Short Description)",
-//     date: "Event Date",
-//   },
-// ];
+import { onValue, ref } from "firebase/database";
+import { db } from "@/firebase/config";
 
 const Events = () => {
+  const [eventData, setEventData] = useState(null);
+
+  useEffect(() => {
+    const eventsRef = ref(db, "events");
+
+    const unsubscribe = onValue(eventsRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        console.log("EVENT DATA", data);
+        // Convert the object data to an array for easier mapping
+        const eventsArray = Object.keys(data).map((key) => ({
+          id: key,
+          ...data[key],
+        }));
+        console.log("EVENTS ARRAY", eventsArray);
+        setEventData(eventsArray);
+      } else {
+        setEventData([]); // Clear the event data if no events found
+      }
+    });
+
+    // Clean up the subscription on component unmount
+    return () => unsubscribe();
+  }, []);
+
   return (
     <Container>
       <div className="flex w-full flex-col justify-center items-center px-6 py-12">
@@ -51,33 +57,44 @@ const Events = () => {
             />
           </div>
           <div className="w-full md:w-[60%]">
-            {eventsData.slice(0, 2).map((event) => (
-              <div
-                key={event.id}
-                className="flex flex-col md:flex-row gap-4 mb-6 border-2 border-accent p-4 rounded-lg"
-              >
-                <div className="bg-accent rounded-lg w-full md:w-[300px]">
-                  <Image
-                    src={event.image}
-                    alt="Event Image"
-                    width={1000}
-                    height={1000}
-                    className="w-[300px] h-full rounded-lg object-contain border-4 border-background"
-                  />
-                </div>
-                <div className="flex justify-center flex-col w-full md:w-[calc(100%-300px)]">
-                  <h3 className="text-xl font- font-bold mb-2">
-                    {event.title}
-                  </h3>
-                  <p className="text-base mb-2">
-                    {event.description.length <= 140
-                      ? event.description
-                      : `${event.description.substring(0, 140)}...`}
+            {
+              // If there are no events to show, display a message
+              !eventData && (
+                <div className="flex justify-center items-center w-full h-[300px]">
+                  <p className="text-xl font-semibold">
+                    No events to show at the moment
                   </p>
-                  <span className="text-base font-medium">{event.date}</span>
                 </div>
-              </div>
-            ))}
+              )
+            }
+            {eventData &&
+              eventData.slice(0, 2).map((event) => (
+                <div
+                  key={event.id}
+                  className="flex flex-col md:flex-row gap-4 mb-6 border-2 border-accent p-4 rounded-lg"
+                >
+                  <div className="bg-accent rounded-lg w-full md:w-[300px]">
+                    <Image
+                      src={event.downloadUrl}
+                      alt="Event Image"
+                      width={1000}
+                      height={1000}
+                      className="w-[300px] h-full rounded-lg object-contain border-4 border-background"
+                    />
+                  </div>
+                  <div className="flex justify-center flex-col w-full md:w-[calc(100%-300px)]">
+                    <h3 className="text-xl font- font-bold mb-2">
+                      {event.title}
+                    </h3>
+                    <p className="text-base mb-2">
+                      {event.description.length <= 140
+                        ? event.description
+                        : `${event.description.substring(0, 140)}...`}
+                    </p>
+                    <span className="text-base font-medium">{event.date}</span>
+                  </div>
+                </div>
+              ))}
             <div className="flex justify-end w-full items-center">
               <div className="viewAllEventsSectionButton">
                 <Link

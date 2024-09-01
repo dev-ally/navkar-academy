@@ -3,6 +3,7 @@ import { events } from "@/data/eventsfdata";
 import React from "react";
 import { Calendar, ClipboardCheck } from "lucide-react";
 import Container from "@/components/shared/Container";
+import DisplayEvents from "@/components/private/events/DisplayEvents";
 
 const Events = () => {
   return (
@@ -14,7 +15,7 @@ const Events = () => {
             Upcoming <span className="text-accent">Events</span>
           </h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 justify-center">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-8 gap-y-10 justify-center">
           {events.map((event, index) => (
             <Card
               key={index}
@@ -25,7 +26,8 @@ const Events = () => {
               eventLocation={event.location}
             />
           ))}
-        </div>
+        </div> */}
+        <DisplayEvents type="upcomming" />
         <div>
           <h1 className="font-bold text-center text-3xl md:text-4xl  md:mb-8 mb-6 mt-12 py-2 flex items-center gap-2 justify-center">
             <ClipboardCheck className="w-8 h-8 text-black" />

@@ -1,9 +1,13 @@
-import { Inter } from "next/font/google";
+import { Inter, Ubuntu } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const ubuntu = Ubuntu({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "700"], // Correctly specify the weights here
+});
 
 export const metadata = {
   title: "Navkar Academy",
@@ -13,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={ubuntu.className}>
         <div className="overflow-hidden">
           <Header />
           <div className="w-full h-[3px] bg-black/10 rounded-full my-4 hidden md:block o" />

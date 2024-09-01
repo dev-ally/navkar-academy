@@ -16,14 +16,14 @@ const Card = ({
   eventLocation,
 }) => {
   return (
-    <div className="relative flex flex-col text-gray-700 bg-white shadow-md border-2 rounded-md w-full mx-auto hover:scale-100 transition-all duration-300 min-w-[200px] max-w-[400px]">
+    <div className="relative flex flex-col justify-between text-gray-700 bg-white shadow-md border-2 rounded-md w-full mx-auto hover:scale-100 transition-all duration-300 min-w-[300px] max-w-[340px]">
       <div>
         <Image
           width={1000}
           height={1000}
           src={eventImg}
           alt="Event Image"
-          className="w-full h-56 object-cover rounded-t-md"
+          className="w-full h-full object-cover rounded-t-md"
         />
       </div>
       <div className="px-6 py-4 flex justify-between items-center">
