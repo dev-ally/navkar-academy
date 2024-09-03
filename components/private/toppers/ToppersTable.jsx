@@ -1,4 +1,7 @@
 const ToppersTable = ({ toppers }) => {
+  if (!toppers || toppers.length === 0) {
+    return null;
+  }
   return (
     <div className="overflow-x-auto">
       <div className="border border-accent rounded-lg overflow-hidden ">
@@ -22,7 +25,7 @@ const ToppersTable = ({ toppers }) => {
                   {topper.name}
                 </td>
                 <td className="px-6 py-4 border-b border-gray-300 text-sm text-gray-700">
-                  {topper.marks}
+                  {topper.percentage}%
                 </td>
               </tr>
             ))}

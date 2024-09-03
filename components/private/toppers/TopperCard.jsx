@@ -16,7 +16,7 @@ const TopperCard = ({ topper }) => {
           />
         </div>
         <span class="absolute top-0 left-0 m-2 w-10 h-9 rounded-full bg-accent p-2 text-center text-sm font-medium text-white">
-          {topper.rank}
+          {topper.index}
         </span>
       </div>
       <div class="mt-4 px-5 pb-5">
@@ -28,7 +28,7 @@ const TopperCard = ({ topper }) => {
           <p>
             <span class="text-xl font-bold text-[#155799] ">
               Percentage:
-              {topper.marks + "%"}
+              {topper.percentage + "%"}
             </span>
           </p>
           <span className="text-base text-[#575757] mt-1">{topper.school}</span>
