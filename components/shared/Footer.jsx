@@ -102,10 +102,10 @@ const Footer = () => {
               <div>
                 <h3 className="text-[18px] font-semibold">Call:</h3>
                 <a
-                  href="tel:123-456-7890"
+                  href="tel:+919930840042"
                   className="text-muted-foreground text-[14px] hover:text-accent"
                 >
-                  123-456-7890
+                  +91 99308 40042
                 </a>
               </div>
               <div>
@@ -120,11 +120,12 @@ const Footer = () => {
               <div>
                 <h3 className="text-[18px] font-semibold">Address:</h3>
                 <a
-                  href="https://youtube.com"
+                  href="https://maps.app.goo.gl/hdBZkiWsvrDG7mncA"
                   target="_blank"
                   className="text-muted-foreground text-[14px] hover:text-accent"
                 >
-                  Demo Address, Maharashtra
+                  Plot No - 40, Shub Nil Shivam, Sector - 11, Kamothe, Panvel,
+                  Navi Mumbai, Maharashtra 410209
                 </a>
               </div>
             </div>

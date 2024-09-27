@@ -42,8 +42,8 @@ const Header = () => {
                 <Menu />
               </SheetTrigger>
               <SheetContent className="flex flex-col justify-between items-center h-full">
-                <SheetHeader className="my-6 w-full">
-                  <SheetTitle className="flex justify-center items-center w-full mb-6">
+                <SheetHeader className="my-4 w-full">
+                  <SheetTitle className="flex justify-center items-center w-full mb-4">
                     <Image
                       src="/logo.png"
                       alt="Navkar Academy Logo"
@@ -54,7 +54,7 @@ const Header = () => {
                   </SheetTitle>
                   <div className="w-full h-[2px] bg-black/10 rounded-full" />
                   {/* NavLinks */}
-                  <div className="flex justify-center items-center flex-col w-full gap-x-4 gap-y-2 pt-6">
+                  <div className="flex justify-center items-center flex-col w-full gap-x-4 gap-y-2 pt-4">
                     <div
                       className={`text-black text-lg tracking-wide ${
                         pathname === "/" && "font-semibold"
@@ -87,16 +87,16 @@ const Header = () => {
                       </a>
                     </Button>
                   </div>
-                  <div className="w-full h-[2px] bg-black/10 rounded-full my-6" />
+                  <div className="w-full h-[2px] bg-black/10 rounded-full my-4" />
                   {/* CTA Information */}
                   <div className="flex flex-col gap-4">
                     <div>
                       <h3 className="text-[18px] font-semibold">Call:</h3>
                       <a
-                        href="tel:123-456-7890"
+                        href="tel:+919930840042"
                         className="text-muted-foreground text-[14px] hover:text-accent"
                       >
-                        123-456-7890
+                        +91 99308 40042
                       </a>
                     </div>
                     <div>
@@ -111,11 +111,12 @@ const Header = () => {
                     <div>
                       <h3 className="text-[18px] font-semibold">Address:</h3>
                       <a
-                        href="https://youtube.com"
+                        href="https://maps.app.goo.gl/hdBZkiWsvrDG7mncA"
                         target="_blank"
                         className="text-muted-foreground text-[14px] hover:text-accent"
                       >
-                        Demo Address, Maharashtra
+                        Plot No - 40, Shub Nil Shivam, Sector - 11, Kamothe,
+                        Panvel, Navi Mumbai, Maharashtra 410209
                       </a>
                     </div>
                   </div>
@@ -128,10 +129,10 @@ const Header = () => {
             <div>
               <h3 className="text-[18px] font-semibold">Call:</h3>
               <a
-                href="tel:123-456-7890"
+                href="tel:+919930840042"
                 className="text-muted-foreground text-[14px] hover:text-accent"
               >
-                123-456-7890
+                +91 99308 40042
               </a>
             </div>
             <div className="w-[2px] h-[40px] bg-black/10 rounded-full" />
@@ -145,14 +146,15 @@ const Header = () => {
               </a>
             </div>
             <div className="w-[2px] h-[40px] bg-black/10 rounded-full" />
-            <div>
+            <div className="w-[460px]">
               <h3 className="text-[18px] font-semibold">Address:</h3>
               <a
-                href="https://youtube.com"
+                href="https://maps.app.goo.gl/hdBZkiWsvrDG7mncA"
                 target="_blank"
                 className="text-muted-foreground text-[14px] hover:text-accent"
               >
-                Demo Address, Maharashtra
+                Plot No - 40, Shub Nil Shivam, Sector - 11, Kamothe, Panvel,
+                Navi Mumbai, Maharashtra 410209
               </a>
             </div>
           </div>
