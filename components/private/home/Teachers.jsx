@@ -17,7 +17,7 @@ const Teachers = () => {
     <Container>
       <div className="flex w-full flex-col justify-center items-center px-6 py-12">
         <div className="flex justify-center items-center gap-2 flex-col mb-12">
-          <h2 className="text-3xl md:text-6xl font-semibold">Our Teachers</h2>
+          <h2 className="text-3xl md:text-6xl font-semibold">Our Teachers.</h2>
           <p className="text-base md:text-lg text-center md:max-w-[80%]">
             Our teachers are highly qualified and experienced in their field and
             are dedicated to help students learn and grow.

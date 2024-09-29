@@ -10,7 +10,7 @@ const About = () => {
         <div className="flex justify-center items-center flex-col gap-2 mb-12">
           {/* Heading */}
           <h2 className="text-3xl md:text-6xl font-semibold">
-            Welcome to <span className="font-bold">Navkar</span>
+            Welcome to <span className="font-bold">Navkar.</span>
           </h2>
           <p className="text-base md:text-lg text-center">
             We offer top-notch education for your child. Our teachers are highly

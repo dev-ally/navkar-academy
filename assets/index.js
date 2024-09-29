@@ -5,6 +5,7 @@ import x from "@/assets/social/x.svg";
 
 import banner from "@/assets/header/banner.png";
 import elements from "@/assets/header/elements.png";
+import headerbanner from "@/assets/header/header-banner.jpeg";
 
 import education from "@/assets/about/education.png";
 import quality from "@/assets/about/quality.png";
@@ -24,6 +25,7 @@ export {
   x,
   banner,
   elements,
+  headerbanner,
   education,
   quality,
   results,

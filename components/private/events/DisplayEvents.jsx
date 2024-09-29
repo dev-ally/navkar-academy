@@ -60,11 +60,10 @@ const DisplayEvents = ({ type = "all" }) => {
     return (
       <div
         // className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-8 gap-y-10 justify-center"
-        className={`justify-center ${
-          upcommingEvents === null || upcommingEvents?.length === 0
+        className={`justify-center ${upcommingEvents === null || upcommingEvents?.length === 0
             ? "flex"
             : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-8 gap-y-10"
-        }`}
+          }`}
       >
         {upcommingEvents === null && (
           <h1 className="font-medium py-2 text-center text-2xl flex items-center gap-2 mb-6 md:mb-8">
@@ -100,11 +99,10 @@ const DisplayEvents = ({ type = "all" }) => {
     return (
       <div
         // className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-8 gap-y-10 justify-center"
-        className={`justify-center ${
-          pastEvents === null || pastEvents?.length === 0
+        className={`justify-center ${pastEvents === null || pastEvents?.length === 0
             ? "flex"
             : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-8 gap-y-10"
-        }`}
+          }`}
       >
         {pastEvents === null && (
           <h1 className="font-medium py-2 text-center text-2xl flex items-center gap-2 mb-6 md:mb-8">

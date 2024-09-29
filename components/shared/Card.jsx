@@ -18,15 +18,15 @@ const Card = ({
 }) => {
   return (
     <div className="relative flex flex-col justify-between text-gray-700 bg-white shadow-md border-2 rounded-md w-full mx-auto hover:scale-100 transition-all duration-300 min-w-[300px] max-w-[340px]">
-      <div>
-        <Image
-          width={1000}
-          height={1000}
-          src={eventImg}
-          alt="Event Image"
-          className="w-full h-full object-cover rounded-t-md"
-        />
-      </div>
+      {/* <div> */}
+      <Image
+        width={1000}
+        height={1000}
+        src={eventImg}
+        alt="Event Image"
+        className="w-full h-full object-cover rounded-t-md"
+      />
+      {/* </div> */}
       <div className="px-6 py-4 flex justify-between items-center">
         <p className="text-primary font-semibold">{eventTitle}</p>
         <AlertDialog>

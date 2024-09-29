@@ -40,7 +40,7 @@ const Events = () => {
     <Container>
       <div className="flex w-full flex-col justify-center items-center px-6 py-12">
         <div className="flex justify-center items-center gap-2 flex-col mb-12">
-          <h2 className="text-3xl md:text-6xl font-semibold">Events</h2>
+          <h2 className="text-3xl md:text-6xl font-semibold">Events.</h2>
           <p className="text-base md:text-lg text-center md:max-w-[80%]">
             We organise most engaging events for our students which are designed
             to help students learn and grow in one way or the other.
