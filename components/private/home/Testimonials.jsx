@@ -8,12 +8,41 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { teacherprof } from "@/assets";
+import { onValue, orderByKey, query, ref } from "firebase/database";
+import { db } from "@/firebase/config";
+import { Loader } from "lucide-react";
 
 const Testimonials = () => {
+  const [testimonialsData, setTestimonialsData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const testimonialsRef = query(ref(db, "testimonials"), orderByKey());
+
+    const unsubscribe = onValue(testimonialsRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const testimonialsArray = Object.keys(data)
+          .map((key) => ({
+            id: key,
+            ...data[key],
+          }))
+          .reverse();
+        setTestimonialsData(testimonialsArray);
+        setIsLoading(false);
+      } else {
+        setTestimonialsData([]);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
     <Container>
       <div className="flex w-full flex-col justify-center items-center px-6 py-12">
@@ -23,7 +52,10 @@ const Testimonials = () => {
             Here are some testimonials from our students and parents.
           </p>
         </div>
-        <div className="w-full mb-[60px]">
+        {isLoading && (
+          <Loader className="translate-y-1/2 w-10 h-10 text-accent spin" />
+        )}
+        <div className="w-full mb-[60px] ">
           <Carousel
             plugins={[
               Autoplay({
@@ -36,37 +68,39 @@ const Testimonials = () => {
             className="w-full"
           >
             <CarouselContent>
-              {Array.from({ length: 5 }).map((_, index) => (
-                <CarouselItem key={index} className="lg:basis-1/2">
-                  <div className="flex flex-col md:flex-row gap-4 items-center justify-center w-fit border-2 border-accent hover:bg-main rounded-lg px-[2rem] py-[2rem] md:py-[2.2rem] mx-[0.4rem] duration-300 ease-in-out select-none">
-                    <div className="w-fit">
-                      <Image
-                        src={teacherprof}
-                        alt="Student Image"
-                        width={200}
-                        height={200}
-                        className="h-[180px] w-fit object-contain border-2 border-accent rounded-full p-2"
-                      />
+              {testimonialsData &&
+                testimonialsData.map((testimonial, index) => (
+                  <CarouselItem key={index} className="lg:basis-1/2">
+                    <div className="flex flex-col md:flex-row gap-4 items-center justify-center w-[350px] md:w-[700px] md:h-[210px] border-2 border-accent hover:bg-main rounded-lg p-8 mx-4 duration-300 ease-in-out select-none">
+                      <div className="w-[180px] h-[180px]">
+                        <Image
+                          src={testimonial.downloadUrl}
+                          alt="Student Image"
+                          width={180}
+                          height={180}
+                          className="h-[160px] w-[160px] object-cover border-2 border-accent rounded-full p-2"
+                        />
+                      </div>
+                      <div className="md:w-[70%] flex justify-center items-start flex-col">
+                        <p className="text-lg barlow-regular">
+                          {testimonial.testimonial}
+                        </p>
+                        <div className="w-full h-[1px] bg-black/20 my-4" />
+                        <span className="text-base md:text-lg barlow-semibold">
+                          {testimonial.name}
+                        </span>
+                        <span className="text-base md:text-md barlow-regular">
+                          {testimonial.designation}
+                        </span>
+                        {testimonial.tenthGrade ? (
+                          <span className="text-md barlow-regular">
+                            10<sup>th</sup> Grade - {testimonial.tenthGrade}
+                          </span>
+                        ) : null}
+                      </div>
                     </div>
-                    <div className="md:w-[70%] flex justify-center items-start flex-col">
-                      <p className="text-lg barlow-regular">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quisquam, voluptate.
-                      </p>
-                      <div className="w-full h-[1px] bg-black/20 my-4" />
-                      <span className="text-base md:text-lg barlow-semibold">
-                        Student Name
-                      </span>
-                      <span className="text-base md:text-md barlow-regular">
-                        Ex-Student
-                      </span>
-                      <span className="text-md barlow-regular">
-                        10<sup>th</sup> Grade - 96%
-                      </span>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
+                  </CarouselItem>
+                ))}
             </CarouselContent>
             <div>
               <CarouselPrevious />

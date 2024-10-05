@@ -4,11 +4,19 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "avatar.iran.liara.run",
+        hostname: "navkar-academy.vercel.app",
       },
       {
         protocol: "https",
         hostname: "firebasestorage.googleapis.com",
+      },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+      },
+      {
+        protocol: "https",
+        hostname: "placehold.co",
       },
     ],
   },
