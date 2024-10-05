@@ -70,8 +70,8 @@ const Testimonials = () => {
             <CarouselContent>
               {testimonialsData &&
                 testimonialsData.map((testimonial, index) => (
-                  <CarouselItem key={index} className="lg:basis-1/2">
-                    <div className="flex flex-col md:flex-row gap-4 items-center justify-center w-[350px] md:w-[700px] md:h-[210px] border-2 border-accent hover:bg-main rounded-lg p-8 mx-4 duration-300 ease-in-out select-none">
+                  <CarouselItem key={index} className="lg:basis-1/2 ">
+                    <div className="flex flex-col md:flex-row gap-4 items-center justify-center  md:w-[700px] md:h-[210px] border-2 border-accent hover:bg-main rounded-lg p-8 mx-4 duration-300 ease-in-out select-none">
                       <div className="w-[180px] h-[180px]">
                         <Image
                           src={testimonial.downloadUrl}
