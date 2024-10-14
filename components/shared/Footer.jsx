@@ -131,8 +131,9 @@ const Footer = () => {
             </div>
             <div className="w-full flex gap-4 items-center justify-between md:justify-start mt-6">
               {/* Social Icons */}
-              {socialIcons.map((icon) => (
+              {socialIcons.map((icon, index) => (
                 <a
+                  key={index}
                   href={icon.link}
                   className="rounded-full border-2 border-black"
                 >

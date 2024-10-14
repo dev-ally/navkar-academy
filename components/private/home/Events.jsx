@@ -21,10 +21,12 @@ const Events = () => {
       if (data) {
         console.log("EVENT DATA", data);
         // Convert the object data to an array for easier mapping
-        const eventsArray = Object.keys(data).map((key) => ({
-          id: key,
-          ...data[key],
-        })).reverse();
+        const eventsArray = Object.keys(data)
+          .map((key) => ({
+            id: key,
+            ...data[key],
+          }))
+          .reverse();
         console.log("EVENTS ARRAY", eventsArray);
         setEventData(eventsArray);
       } else {
@@ -87,9 +89,9 @@ const Events = () => {
                       {event.title}
                     </h3>
                     <p className="text-base mb-2">
-                      {event.description.length <= 140
-                        ? event.description
-                        : `${event.description.substring(0, 140)}...`}
+                      {event?.description.length <= 140
+                        ? event?.description
+                        : `${event?.description.substring(0, 140)}...`}
                     </p>
                     <span className="text-base font-medium">{event.date}</span>
                   </div>
