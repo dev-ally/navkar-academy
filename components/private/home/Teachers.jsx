@@ -67,7 +67,7 @@ const Teachers = () => {
     <Container>
       <div className="flex w-full flex-col justify-center items-center px-6 py-12">
         <div className="flex justify-center items-center gap-2 flex-col mb-12">
-          <h2 className="text-3xl md:text-6xl font-semibold">Our Teachers</h2>
+          <h2 className="text-3xl md:text-6xl font-semibold">Our Teachers.</h2>
           <p className="text-base md:text-lg text-center md:max-w-[80%]">
             Our teachers are highly qualified and experienced in their field and
             are dedicated to help students learn and grow.
@@ -83,7 +83,10 @@ const Teachers = () => {
         >
           {currentTeachers &&
             currentTeachers.map((teacher) => (
-              <div key={teacher.id} className="flex flex-col items-center">
+              <div
+                key={teacher.id}
+                className="flex flex-col items-center justify-end"
+              >
                 <div className="rounded-t-full border-4 hover:border-accent transition-all duration-300 overflow-hidden">
                   <div className="p-4 overflow-hidden flex justify-center items-center">
                     <Image
@@ -91,7 +94,7 @@ const Teachers = () => {
                       alt="Teacher Profile"
                       width={1000}
                       height={1000}
-                      className="w-[90%] md:w-full object-cover"
+                      className="w-[90%] md:w-full object-cover rounded-t-full"
                     />
                   </div>
                   <div className="w-full flex justify-center items-center flex-col p-3 pt-0">
