@@ -17,7 +17,7 @@ import { usePathname } from "next/navigation";
 
 const Header = () => {
   const pathname = usePathname();
-  console.log(pathname, typeof pathname);
+  // console.log(pathname, typeof pathname);
 
   return (
     <Container>

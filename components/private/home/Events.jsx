@@ -9,6 +9,16 @@ import React, { useEffect, useState } from "react";
 import { events as eventsData } from "@/data/eventsfdata";
 import { onValue, ref } from "firebase/database";
 import { db } from "@/firebase/config";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselNextInside,
+  CarouselPrevious,
+  CarouselPreviousInside,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Events = () => {
   const [eventData, setEventData] = useState(null);
@@ -19,7 +29,7 @@ const Events = () => {
     const unsubscribe = onValue(eventsRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        console.log("EVENT DATA", data);
+        // console.log("EVENT DATA", data);
         // Convert the object data to an array for easier mapping
         const eventsArray = Object.keys(data)
           .map((key) => ({
@@ -27,10 +37,10 @@ const Events = () => {
             ...data[key],
           }))
           .reverse();
-        console.log("EVENTS ARRAY", eventsArray);
+        // console.log("EVENTS ARRAY", eventsArray);
         setEventData(eventsArray);
       } else {
-        setEventData([]); // Clear the event data if no events found
+        setEventData(null); // Clear the event data if no events found
       }
     });
 
@@ -58,7 +68,7 @@ const Events = () => {
               className="w-full h-full object-contain"
             />
           </div>
-          <div className="w-full md:w-[60%]">
+          <div className="w-full md:w-[60%] flex flex-wrap gap-4 justify-between items-center">
             {
               // If there are no events to show, display a message
               !eventData && (
@@ -73,18 +83,66 @@ const Events = () => {
               eventData.slice(0, 2).map((event) => (
                 <div
                   key={event.id}
-                  className="flex flex-col md:flex-row gap-4 mb-6 border-2 border-accent p-4 rounded-lg"
+                  className="flex flex-col gap-4 mb-6 border-2 border-accent p-4 rounded-lg w-[48%]"
                 >
-                  <div className="bg-accent rounded-lg w-full md:w-[300px]">
-                    <Image
+                  <div className="bg-accent rounded-lg w-full md:w-full flex justify-center items-center">
+                    {/* <Image
                       src={event.downloadUrl}
                       alt="Event Image"
                       width={1000}
                       height={1000}
                       className="w-[300px] h-full rounded-lg object-contain border-4 border-background"
-                    />
+                    /> */}
+
+                    <Carousel
+                      className="w-full max-w-[90%]"
+                      plugins={[
+                        Autoplay({
+                          delay: 2000,
+                        }),
+                      ]}
+                    >
+                      <CarouselContent className="h-full items-center">
+                        {event?.downloadUrl?.length > 0 &&
+                          event?.downloadUrl?.map((image, index) => {
+                            // console.log(
+                            //   "IMAGE SINGLE",
+                            //   image,
+                            //   image.split(" ")[1]?.split("_")[3]
+                            // );
+                            return (
+                              <CarouselItem
+                                key={index}
+                                className="w-full h-full flex justify-center items-center"
+                              >
+                                <div className="p-2 w-full flex justify-center items-center">
+                                  {image.split(" ")[1].split("_")[3] ===
+                                  "mp4" ? (
+                                    <video
+                                      src={image?.split(" ")[0]}
+                                      autoPlay
+                                      controls
+                                      className="max-h-[300px] w-fit object-contain"
+                                    />
+                                  ) : (
+                                    <Image
+                                      width={1000}
+                                      height={300}
+                                      src={image.split(" ")[0]}
+                                      alt="Event Image"
+                                      className="max-h-[300px] w-fit object-contain rounded-md"
+                                    />
+                                  )}
+                                </div>
+                              </CarouselItem>
+                            );
+                          })}
+                      </CarouselContent>
+                      <CarouselPreviousInside />
+                      <CarouselNextInside />
+                    </Carousel>
                   </div>
-                  <div className="flex justify-center flex-col w-full md:w-[calc(100%-300px)]">
+                  <div className="flex justify-center items-center flex-col w-full">
                     <h3 className="text-xl font- font-bold mb-2">
                       {event.title}
                     </h3>
